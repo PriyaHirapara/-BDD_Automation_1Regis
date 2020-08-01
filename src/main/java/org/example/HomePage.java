@@ -13,6 +13,8 @@ public class HomePage extends Util {
     //store locater veriable
     private String _expecetedTitleOOfThePage ="Welcome to our store";
     private By _clickOnRegisterButton=By.xpath("//div[@class=\"header-links\"]/ul[1]/li[1]/a");
+    //private By _clickOnComputerBurron =By.xpath("//a[text() = \"Computers \"]");
+
 
     // creat varifyuserIsOnHomePage method
     public void varifyuserIsOnHomePage()
@@ -24,6 +26,10 @@ public class HomePage extends Util {
     {
         clickonElement(_clickOnRegisterButton);
     }
+    public void userclickonCategorylink(String categoryLink){
+        clickonElement(By.linkText(categoryLink));
+    }
+
 
 
 

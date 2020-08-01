@@ -65,6 +65,9 @@ public class Util extends Basepage
         Alert alert = driver.switchTo().alert();
         String alertMessage = driver.switchTo().alert().getText();
     }
+    public static String getUrl(){
+        return driver.getCurrentUrl();
+    }
     //method for timestamp
     public  long timestamp()
     {

@@ -14,7 +14,7 @@ public class BrowserManager extends Util {
     public void setBrowser()
     {
         // store browsername in veriable
-        String browserName = "firefox";
+        String browserName = "chrome";
         if (browserName.equalsIgnoreCase("chrome"))
            {
                //setting up Chromedriver path

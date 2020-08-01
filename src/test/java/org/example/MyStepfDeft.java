@@ -1,9 +1,12 @@
 package org.example;
 
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 
 public class MyStepfDeft
 {
@@ -11,6 +14,7 @@ public class MyStepfDeft
     HomePage homePage = new HomePage();
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationSuccesfullyPage registrationSuccesfullyPage = new RegistrationSuccesfullyPage();
+
 
     // creat all methods name accorrding to scenarious
     @Given("^user is on homepage$")
@@ -37,5 +41,14 @@ public class MyStepfDeft
     public void user_should_able_to_register_successfully()
     {
         registrationSuccesfullyPage.verifyUserRegisterdSucessfully();
+    }
+    @When("^user click on any \"([^\"]*)\" from the menu$")
+    public void userClickOnAnyFromTheMenu(String categoryLink) {
+        homePage.userclickonCategorylink(categoryLink);
+
+    }
+    @Then("^user should able to nevigat to \"([^\"]*)\"$")
+    public void userShouldAbleToNevigatTo(String expextedUrl)  {
+        Assert.assertEquals(Util.getUrl(),expextedUrl,"user cant able to nevigat to page ");
     }
 }
